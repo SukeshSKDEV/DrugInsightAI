@@ -140,9 +140,9 @@ def get_all_molecule_properties(bioactivity_df, cache_file='../data/cache/descri
 
     new_descriptors=[]
 
-    for i, molecule in enumerate(missing_molecules, start=1):
+    for i, molecule_id in enumerate(missing_molecules, start=1):
         try:
-            compound=get_molecule_properties(molecule)
+            compound=get_molecule_properties(molecule_id)
             new_descriptors.append(compound)
         except Exception as e:
             print(f"Failed : {molecule_id}")
